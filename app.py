@@ -38,6 +38,7 @@ def show_size():
     return jsonify(data_json)
 
 #-------------------------------------------------------#
+
 #To clean the i/p data
 @app.route('/show/clean', methods=['GET'])
 def save_data():
