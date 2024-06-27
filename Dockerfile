@@ -8,7 +8,7 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-EXPOSE 4000
+EXPOSE 5000
 
 ENTRYPOINT [ "python3" ]
 
