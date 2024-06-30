@@ -43,9 +43,9 @@ def gen_overview_3(df):
 
 def gen_overview_img_1(df):
     fig = plt.figure(figsize=(3.5,8))
-    ax = sns.barplot(x="Suburb", y="Total amount with Tax", color='#0000FF',saturation=0.5, data=df, errorbar=None, estimator=sum, label='Total Revenue')
-    ax = sns.barplot(x="Suburb", y="cogs", color='#007FFF', saturation=0.2, data=df, errorbar=None, estimator=sum, label='Cost of goods')
-    ax = sns.barplot(x="Suburb", y="gross profit", color='#89CFF0', saturation=0.5, data=df, errorbar=None, estimator=sum, label='Gross Profit')
+    ax = sns.barplot(x=df["Suburb"], y=df["Total amount with Tax"]/1000, color='#0000FF',saturation=0.5, errorbar=None, estimator=sum, label='Total Revenue(k $)')
+    ax = sns.barplot(x=df["Suburb"], y=df["cogs"]/1000, color='#007FFF', saturation=0.2, errorbar=None, estimator=sum, label='Cost of goods(k $)')
+    ax = sns.barplot(x=df["Suburb"], y=df["gross profit"]/1000, color='#89CFF0', saturation=0.5, errorbar=None, estimator=sum, label='Gross Profit(k $)')
     ax.set(xlabel="Suburbs", ylabel="Financial Parameters")
     plt.legend(loc=3)
     # fig.savefig('.././Main-Project/backend/public/images/general/general_1.png') #Ideally store to AWS s3
