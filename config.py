@@ -1,1 +1,1 @@
-file_path = './dataset/supermarket.csv'
+file_path = 'https://storesmart.s3.amazonaws.com/supermarket.csv'
