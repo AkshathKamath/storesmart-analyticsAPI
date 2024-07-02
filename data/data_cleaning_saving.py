@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 from pymongo import MongoClient
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 ## Helper funcs & dicts
 def helper_func_1(x):
@@ -51,7 +51,7 @@ def data_cleaner_saver(file_path):
     df['Week of Month']=df['Date'].apply(helper_func_2)
     df.drop(columns=['Unnamed: 0','Invoice ID','Time','Date'],inplace=True)
 
-    load_dotenv()
+    # load_dotenv()
 
     MONGO_URL = os.getenv('MONGO_URL_ID')
     DB_NAME = os.getenv('DB_NAME_ID')

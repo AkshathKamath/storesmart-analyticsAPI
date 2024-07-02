@@ -1,10 +1,10 @@
 import os
 import pandas as pd
 from pymongo import MongoClient
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 def data_extractor():
-    load_dotenv()
+    # load_dotenv()
 
     MONGO_URL = os.getenv('MONGO_URL_ID')
     DB_NAME = os.getenv('DB_NAME_ID')
