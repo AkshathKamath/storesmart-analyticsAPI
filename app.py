@@ -8,6 +8,7 @@ from data.data_deleting import data_deleter
 from data.data_exist_checking import data_checker
 from analytics.general_overview import gen_overview_1, gen_overview_2, gen_overview_3,gen_overview_img_1, gen_overview_img_2, gen_overview_img_3
 from analytics.timeframe_analysis import timeframe_1, timeframe_img_1, timeframe_2, timeframe_3
+from analytics.storewise_analysis import storewise_1, storewise_2, storewise_3, storewise_img_1, storewise_img_2, storewise_img_3
 from aws_handling import aws_img_saver
 
 app = Flask(__name__)
@@ -113,6 +114,42 @@ def timeframe_analytics_3():
     tim_3 = timeframe_3(df)
 
     data_json = tim_3
+    return jsonify(data_json)
+
+#-------------------------------------------------------#
+
+@app.route('/show/storewise/1', methods=['GET'])
+def storewise_analytics_1():
+    df = data_extractor()
+    img_buffer = storewise_img_1(df)
+    aws_img_saver(img_buffer, 'storewise_1.png')
+    store_1 = storewise_1(df)
+
+    data_json = store_1
+    return jsonify(data_json)
+
+#-------------------------------------------------------#
+
+@app.route('/show/storewise/2', methods=['GET'])
+def storewise_analytics_2():
+    df = data_extractor()
+    img_buffer = storewise_img_2(df)
+    aws_img_saver(img_buffer, 'storewise_2.png')
+    store_2 = storewise_2(df)
+
+    data_json = store_2
+    return jsonify(data_json)
+
+#-------------------------------------------------------#
+
+@app.route('/show/storewise/3', methods=['GET'])
+def storewise_analytics_3():
+    df = data_extractor()
+    img_buffer = storewise_img_3(df)
+    aws_img_saver(img_buffer, 'storewise_3.png')
+    store_3 = storewise_3(df)
+
+    data_json = store_3
     return jsonify(data_json)
 
 #-------------------------------------------------------#

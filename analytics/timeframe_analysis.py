@@ -48,8 +48,8 @@ def timeframe_3(df):
 def timeframe_img_1(df):
     fig = plt.figure(figsize=(3, 4))
 
-    sns.lineplot(x=df['Month'].unique(), y=df.groupby('Month')['gross profit'].sum().values, marker='o', label='Gross Profit')
-    sns.lineplot(x=df['Month'].unique(), y=df.groupby('Month')['Total amount with Tax'].sum().values, marker='o', label='Total Revenue')
+    sns.lineplot(x=df['Month'].unique(), y=df.groupby('Month')['gross profit'].sum().values/(1000), marker='o', label='Gross Profit (k$)')
+    sns.lineplot(x=df['Month'].unique(), y=df.groupby('Month')['Total amount with Tax'].sum().values/(1000), marker='o', label='Total Revenue (k$)', color='#89CFF0')
 
     plt.title('Total Revenue and Profit vs Month')
     plt.xlabel('Month')
